@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+	int arr[] = { 8,7,6,5,4,3,2 };
+	int i = sizeof(arr) / sizeof(arr[0]);
+	int j = 0;
+	for (j = 0; j < i-1; j++)
+	{
+		int m = 0;
+		for (m = 0; m < i - j - 1; m++)
+		{
+			if (arr[m] > arr[m + 1])
+			{
+				int k = 0;
+				k = arr[m];
+				arr[m] = arr[m + 1];
+				arr[m + 1] = k;
+			}
+		}
+	}
+	for (j = 0; j < i; j++)
+		printf("%d", arr[j]);
+	return 0;
+}
